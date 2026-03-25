@@ -157,9 +157,9 @@ nav {
   animation: fadeUp 0.8s 0.4s forwards;
   display: block;
   max-width: 100%;
-  word-break: break-word;
-  overflow-wrap: break-word;
-  hyphens: manual;
+  word-break: keep-all;
+  overflow-wrap: normal;
+  hyphens: none;
 }
 
 .hero-name span {
@@ -749,11 +749,14 @@ footer span { color: var(--accent); }
     font-size: 0.62rem;
   }
 
+  /* ↓ THE FIX: fluid vw scaling + no wrapping within each line */
   .hero-name {
-    font-size: clamp(1.8rem, 11vw, 4rem);
+    font-size: clamp(1rem, 8.5vw, 4rem);
     line-height: 1.0;
-    word-break: break-word;
-    overflow-wrap: break-word;
+    white-space: nowrap;       /* prevents "a" orphan — each <br>-separated word stays whole */
+    word-break: keep-all;
+    overflow-wrap: normal;
+    hyphens: none;
   }
 
   .hero-sub {
@@ -915,8 +918,10 @@ footer span { color: var(--accent); }
     display: none; /* Logo still shows; links reachable via in-page anchors */
   }
 
+  /* Scales down further on very small screens, still no wrapping */
   .hero-name {
-    font-size: clamp(1.4rem, 10vw, 2.8rem);
+    font-size: clamp(1rem, 7.5vw, 2.8rem);
+    white-space: nowrap;
   }
 
   .about-img-wrap {
