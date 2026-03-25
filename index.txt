@@ -9,18 +9,19 @@
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
   <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
   <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
-
+  
+  <!-- Custom Cursor -->
   <!-- Primary SEO -->
   <title>Shriwayanta Maiti — CS Student & Developer</title>
-  <meta name="description" content="Shriwayanta Maiti is a Computer Science student at DYPIU building AI systems, web apps, and real-world solutions. Explore my projects, skills, and get in touch." />
-  <meta name="keywords" content="Shriwayanta Maiti, developer, CS student, AI, ML, web developer, software engineer, portfolio, DYPIU, voice conversion, sign language" />
+  <meta name="description" content="Shriwayanta Maiti is a Computer Science student and developer building web applications. Explore my projects, skills, and get in touch." />
+  <meta name="keywords" content="Shriwayanta Maiti, developer, CS student, web developer, software engineer, portfolio" />
   <meta name="author" content="Shriwayanta Maiti" />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://shrithisside.dev" />
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Shriwayanta Maiti — CS Student & Developer" />
-  <meta property="og:description" content="CS Student at DYPIU. Building AI systems, web apps, and anything that solves a real problem." />
+  <meta property="og:title" content="Shriwayanta Maiti — Developer" />
+  <meta property="og:description" content="CS Student & Developer. Building things for the web." />
   <meta property="og:url" content="https://shrithisside.dev" />
   <meta property="og:type" content="website" />
 
@@ -32,73 +33,17 @@
     "name": "Shriwayanta Maiti",
     "url": "https://shrithisside.dev",
     "jobTitle": "Computer Science Student & Developer",
-    "email": "shrithissidee@gmail.com",
-    "telephone": "+918910944852",
-    "alumniOf": "D Y Patil International University, Pune",
     "sameAs": [
-      "https://github.com/shrithisside",
-      "https://linkedin.com/in/shriwayanta-maiti"
+      "https://github.com/yourusername",
+      "https://linkedin.com/in/yourusername"
     ]
   }
   </script>
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet" />
-
-  <!-- Projects teaser styles -->
-  <style>
-    .projects-teaser {
-      border: 1px solid var(--border);
-      border-radius: 4px;
-      padding: 3.5rem;
-      background: var(--bg2);
-      position: relative;
-      overflow: hidden;
-    }
-    .projects-teaser::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0;
-      height: 2px;
-      background: linear-gradient(90deg, var(--accent), var(--accent2));
-    }
-    .projects-count-row {
-      display: flex;
-      align-items: flex-start;
-      gap: 3rem;
-      margin-bottom: 2rem;
-      flex-wrap: wrap;
-    }
-    .projects-big-num {
-      font-family: 'Syne', sans-serif;
-      font-size: clamp(5rem, 12vw, 10rem);
-      font-weight: 800;
-      line-height: 1;
-      color: var(--accent);
-      letter-spacing: -0.04em;
-      opacity: 0.15;
-    }
-    .projects-tag-cloud {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.6rem;
-      align-items: flex-start;
-      padding-top: 0.5rem;
-    }
-    .projects-teaser-text {
-      font-size: 1rem;
-      color: var(--muted);
-      line-height: 1.8;
-      max-width: 520px;
-      margin-bottom: 2.5rem;
-      font-family: 'DM Mono', monospace;
-    }
-    .projects-btn {
-      font-size: 0.82rem;
-      padding: 1rem 2.5rem;
-    }
-  </style>
-
+ 
+  <!-- Custom Cursor -->
   <!-- Stylesheet -->
   <link rel="stylesheet" href="style.css" />
 </head>
@@ -109,7 +54,7 @@
 
   <!-- NAV -->
   <nav>
-    <div class="nav-logo">SM_</div>
+    <div class="nav-logo">SM</div>
     <ul class="nav-links">
       <li><a href="#about">About</a></li>
       <li><a href="#projects">Projects</a></li>
@@ -122,9 +67,9 @@
   <section class="hero" id="home">
     <div class="hero-grid"></div>
     <div class="hero-blob"></div>
-    <p class="hero-tag">// available for internships & collaborations</p>
+    <p class="hero-tag">// available for opportunities</p>
     <h1 class="hero-name">Shriwayanta<br /><span>Maiti</span></h1>
-    <p class="hero-sub">CS student at DYPIU · I build AI systems, web apps, and anything that solves a real problem.</p>
+    <p class="hero-sub">Computer Science student building things for the web. I turn ideas into clean, functional code — one commit at a time.</p>
     <div class="hero-cta">
       <a href="#projects" class="btn btn-primary">View Projects →</a>
       <a href="#contact" class="btn btn-ghost">Get in Touch</a>
@@ -141,16 +86,16 @@
     <div class="about-grid">
       <div>
         <h2 class="about-heading reveal">I build things<br />that have impact<br />on the <em>world.</em></h2>
-        <p class="about-text reveal">Hey! I'm Shriwayanta — a CS student at D Y Patil International University, Pune with a CGPA of 8.61. I work across the full stack but have a deep love for AI/ML — from voice conversion systems to real-time face landmark detection.</p>
-        <p class="about-text reveal">I'm the Secretary of the IET Student Chapter at DYPIU, a hackathon builder, and someone who genuinely believes tech should make life better — whether that's for a deaf community, a college admin, or a shopkeeper in rural Haldia.</p>
+        <p class="about-text reveal">Hey! I'm Shriwayanta — a CS student passionate about software development and building meaningful digital experiences. I enjoy working across the stack, solving real problems with clean and efficient code.</p>
+        <p class="about-text reveal">When I'm not coding, I'm probably exploring new tech, contributing to open source, or figuring out how things work under the hood.</p>
         <div class="about-stats reveal">
           <div class="stat">
-            <div class="stat-num">4+</div>
+            <div class="stat-num">10+</div>
             <div class="stat-label">Projects</div>
           </div>
           <div class="stat">
-            <div class="stat-num">8.61</div>
-            <div class="stat-label">CGPA</div>
+            <div class="stat-num">3+</div>
+            <div class="stat-label">Years coding</div>
           </div>
           <div class="stat">
             <div class="stat-num">∞</div>
@@ -171,24 +116,44 @@
   <!-- PROJECTS -->
   <section id="projects">
     <p class="section-label reveal">02 — Projects</p>
-    <div class="projects-cta-wrap reveal">
-      <div class="projects-teaser">
-        <div class="projects-count-row">
-          <span class="projects-big-num">04</span>
-          <div class="projects-tag-cloud">
-            <span class="tag">Python</span>
-            <span class="tag">PyTorch</span>
-            <span class="tag">TensorFlow</span>
-            <span class="tag">Django</span>
-            <span class="tag">OpenCV</span>
-            <span class="tag">Transformers</span>
-            <span class="tag">React</span>
-            <span class="tag">JavaScript</span>
-          </div>
+    <div class="projects-grid">
+
+      <div class="project-card reveal">
+        <p class="project-num">001</p>
+        <h3 class="project-title">Project Alpha</h3>
+        <p class="project-desc">A full-stack web application built to solve a real-world problem. Features user authentication, a REST API, and a clean responsive UI.</p>
+        <div class="project-tags">
+          <span class="tag">React</span>
+          <span class="tag">Node.js</span>
+          <span class="tag">MongoDB</span>
         </div>
-        <p class="projects-teaser-text">From voice cloning systems to real-time face landmark detection — here's what I've been building.</p>
-        <a href="projects.html" class="btn btn-primary projects-btn">View All Projects →</a>
+        <a href="#" class="project-link">View Project →</a>
       </div>
+
+      <div class="project-card reveal">
+        <p class="project-num">002</p>
+        <h3 class="project-title">Project Beta</h3>
+        <p class="project-desc">A command-line tool that automates repetitive developer tasks. Reduced manual workflow time by 60% in personal projects.</p>
+        <div class="project-tags">
+          <span class="tag">Python</span>
+          <span class="tag">CLI</span>
+          <span class="tag">Automation</span>
+        </div>
+        <a href="#" class="project-link">View Project →</a>
+      </div>
+
+      <div class="project-card reveal">
+        <p class="project-num">003</p>
+        <h3 class="project-title">Project Gamma</h3>
+        <p class="project-desc">An open-source library that simplifies common data processing tasks. Published on GitHub with documentation and tests.</p>
+        <div class="project-tags">
+          <span class="tag">JavaScript</span>
+          <span class="tag">Open Source</span>
+          <span class="tag">NPM</span>
+        </div>
+        <a href="#" class="project-link">View Project →</a>
+      </div>
+
     </div>
   </section>
 
@@ -200,72 +165,60 @@
       <div class="skill-group reveal">
         <p class="skill-group-title">// Languages</p>
         <div class="skill-item">
-          <div class="skill-row"><span>Python</span><span class="skill-pct">90%</span></div>
-          <div class="skill-bar"><div class="skill-fill" style="--w:0.90"></div></div>
+          <div class="skill-row"><span>Python</span><span class="skill-pct">85%</span></div>
+          <div class="skill-bar"><div class="skill-fill" style="--w:0.85"></div></div>
         </div>
         <div class="skill-item">
           <div class="skill-row"><span>JavaScript</span><span class="skill-pct">80%</span></div>
           <div class="skill-bar"><div class="skill-fill" style="--w:0.80"></div></div>
         </div>
         <div class="skill-item">
-          <div class="skill-row"><span>Java / C</span><span class="skill-pct">75%</span></div>
-          <div class="skill-bar"><div class="skill-fill" style="--w:0.75"></div></div>
+          <div class="skill-row"><span>C / C++</span><span class="skill-pct">70%</span></div>
+          <div class="skill-bar"><div class="skill-fill" style="--w:0.70"></div></div>
         </div>
         <div class="skill-item">
           <div class="skill-row"><span>HTML / CSS</span><span class="skill-pct">90%</span></div>
           <div class="skill-bar"><div class="skill-fill" style="--w:0.90"></div></div>
         </div>
+      </div>
+
+      <div class="skill-group reveal">
+        <p class="skill-group-title">// Frameworks</p>
         <div class="skill-item">
-          <div class="skill-row"><span>SQL / MongoDB</span><span class="skill-pct">70%</span></div>
+          <div class="skill-row"><span>React</span><span class="skill-pct">75%</span></div>
+          <div class="skill-bar"><div class="skill-fill" style="--w:0.75"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-row"><span>Node.js</span><span class="skill-pct">70%</span></div>
           <div class="skill-bar"><div class="skill-fill" style="--w:0.70"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-row"><span>Flask / Django</span><span class="skill-pct">65%</span></div>
+          <div class="skill-bar"><div class="skill-fill" style="--w:0.65"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-row"><span>Tailwind CSS</span><span class="skill-pct">80%</span></div>
+          <div class="skill-bar"><div class="skill-fill" style="--w:0.80"></div></div>
         </div>
       </div>
 
       <div class="skill-group reveal">
-        <p class="skill-group-title">// AI / ML</p>
+        <p class="skill-group-title">// Tools & Other</p>
         <div class="skill-item">
-          <div class="skill-row"><span>TensorFlow / Keras</span><span class="skill-pct">80%</span></div>
-          <div class="skill-bar"><div class="skill-fill" style="--w:0.80"></div></div>
+          <div class="skill-row"><span>Git / GitHub</span><span class="skill-pct">85%</span></div>
+          <div class="skill-bar"><div class="skill-fill" style="--w:0.85"></div></div>
         </div>
         <div class="skill-item">
-          <div class="skill-row"><span>PyTorch / Transformers</span><span class="skill-pct">75%</span></div>
-          <div class="skill-bar"><div class="skill-fill" style="--w:0.75"></div></div>
-        </div>
-        <div class="skill-item">
-          <div class="skill-row"><span>Computer Vision</span><span class="skill-pct">80%</span></div>
-          <div class="skill-bar"><div class="skill-fill" style="--w:0.80"></div></div>
-        </div>
-        <div class="skill-item">
-          <div class="skill-row"><span>NLP</span><span class="skill-pct">75%</span></div>
-          <div class="skill-bar"><div class="skill-fill" style="--w:0.75"></div></div>
-        </div>
-        <div class="skill-item">
-          <div class="skill-row"><span>Deep Learning</span><span class="skill-pct">75%</span></div>
-          <div class="skill-bar"><div class="skill-fill" style="--w:0.75"></div></div>
-        </div>
-      </div>
-
-      <div class="skill-group reveal">
-        <p class="skill-group-title">// Tools & Frameworks</p>
-        <div class="skill-item">
-          <div class="skill-row"><span>Git / GitHub</span><span class="skill-pct">90%</span></div>
-          <div class="skill-bar"><div class="skill-fill" style="--w:0.90"></div></div>
-        </div>
-        <div class="skill-item">
-          <div class="skill-row"><span>React / MERN Stack</span><span class="skill-pct">75%</span></div>
-          <div class="skill-bar"><div class="skill-fill" style="--w:0.75"></div></div>
-        </div>
-        <div class="skill-item">
-          <div class="skill-row"><span>AWS / Azure</span><span class="skill-pct">65%</span></div>
-          <div class="skill-bar"><div class="skill-fill" style="--w:0.65"></div></div>
-        </div>
-        <div class="skill-item">
-          <div class="skill-row"><span>Django</span><span class="skill-pct">70%</span></div>
+          <div class="skill-row"><span>Linux</span><span class="skill-pct">70%</span></div>
           <div class="skill-bar"><div class="skill-fill" style="--w:0.70"></div></div>
         </div>
         <div class="skill-item">
-          <div class="skill-row"><span>Selenium</span><span class="skill-pct">65%</span></div>
+          <div class="skill-row"><span>SQL / Databases</span><span class="skill-pct">65%</span></div>
           <div class="skill-bar"><div class="skill-fill" style="--w:0.65"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-row"><span>REST APIs</span><span class="skill-pct">75%</span></div>
+          <div class="skill-bar"><div class="skill-fill" style="--w:0.75"></div></div>
         </div>
       </div>
 
@@ -293,7 +246,7 @@
                 <path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12"/>
               </svg>
             </div>
-            <span>github.com/shrithisside</span>
+            <span>github.com/shrithisside/</span>
           </div>
           <span>↗</span>
         </a>
@@ -304,20 +257,17 @@
           </div>
           <span>↗</span>
         </a>
-        <a href="tel:+918910944852" class="contact-link">
-          <div class="contact-link-left">
-            <div class="contact-icon">☎</div>
-            <span>+91 89109 44852</span>
-          </div>
-          <span>↗</span>
-        </a>
       </div>
     </div>
   </section>
 
   <footer>
     <span>Shriwayanta Maiti</span>
-    <p>Designed & built with <span>♥</span> — 2026</p>
+    <!--<span>shriwayanta maiti</span> --- IGNORE --->
+    <!--<span>shriwayanta</span> --- IGNORE --->
+    <!--<span>shri</span> --- IGNORE --->
+
+    <!-- <p>Designed & built with <span>♥</span> — 2025</p> -->
     <p>shrithisside.dev</p>
   </footer>
 

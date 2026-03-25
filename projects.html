@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Projects — Shriwayanta Maiti</title>
+  <meta name="description" content="Projects by Shriwayanta Maiti — AI systems, web apps, and real-world solutions." />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+
+    /* PAGE HEADER */
+    .page-header {
+      min-height: 42vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 8rem 3rem 4rem;
+      position: relative;
+      overflow: hidden;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .page-header-grid {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(200,241,53,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(200,241,53,0.03) 1px, transparent 1px);
+      background-size: 60px 60px;
+      pointer-events: none;
+    }
+
+    .page-header-blob {
+      position: absolute;
+      top: -150px; right: -150px;
+      width: 500px; height: 500px;
+      background: radial-gradient(circle, rgba(200,241,53,0.07) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-decoration: none;
+      margin-bottom: 2rem;
+      transition: color 0.2s;
+      cursor: none;
+    }
+
+    .back-link:hover { color: var(--accent); }
+
+    .page-title {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(3rem, 8vw, 7rem);
+      font-weight: 800;
+      line-height: 0.92;
+      letter-spacing: -0.03em;
+      opacity: 0;
+      animation: fadeUp 0.7s 0.1s forwards;
+    }
+
+    .page-title span { color: var(--accent); }
+
+    .page-sub {
+      font-size: 0.82rem;
+      color: var(--muted);
+      margin-top: 1.5rem;
+      line-height: 1.8;
+      opacity: 0;
+      animation: fadeUp 0.7s 0.3s forwards;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* FILTER BAR */
+    .filter-bar {
+      padding: 2rem 3rem;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      gap: 0.8rem;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .filter-label {
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-right: 0.5rem;
+    }
+
+    .filter-btn {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.65rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 0.4rem 1rem;
+      border-radius: 2px;
+      border: 1px solid var(--border);
+      background: transparent;
+      color: var(--muted);
+      cursor: none;
+      transition: all 0.2s;
+    }
+
+    .filter-btn:hover,
+    .filter-btn.active {
+      border-color: var(--accent);
+      color: var(--accent);
+      background: rgba(200,241,53,0.05);
+    }
+
+    /* PROJECTS LIST */
+    .projects-list {
+      padding: 3rem;
+    }
+
+    /* BIG CARD — featured */
+    .project-featured {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      overflow: hidden;
+      margin-bottom: 1.5rem;
+      background: var(--bg2);
+      transition: all 0.3s;
+      cursor: none;
+    }
+
+    .project-featured:hover {
+      border-color: #333;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+      transform: translateY(-3px);
+    }
+
+    .project-featured-visual {
+      background: var(--bg3);
+      position: relative;
+      min-height: 300px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      border-right: 1px solid var(--border);
+    }
+
+    .project-featured-visual::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(200,241,53,0.06) 0%, transparent 60%);
+    }
+
+    .project-visual-icon {
+      font-size: 4rem;
+      opacity: 0.15;
+      z-index: 1;
+      filter: grayscale(1);
+    }
+
+    .project-visual-lines {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(200,241,53,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(200,241,53,0.04) 1px, transparent 1px);
+      background-size: 30px 30px;
+    }
+
+    .project-featured-content {
+      padding: 3rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .project-featured-top { margin-bottom: 2rem; }
+
+    .project-year {
+      font-size: 0.62rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent);
+      opacity: 0.7;
+      margin-bottom: 1rem;
+    }
+
+    .project-featured-title {
+      font-family: 'Syne', sans-serif;
+      font-size: 2rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 1rem;
+      line-height: 1.1;
+    }
+
+    .project-featured-desc {
+      font-size: 0.8rem;
+      color: var(--muted);
+      line-height: 1.9;
+      margin-bottom: 1.5rem;
+    }
+
+    .project-metrics {
+      display: flex;
+      gap: 1.5rem;
+      margin-bottom: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .metric {
+      display: flex;
+      flex-direction: column;
+      gap: 0.2rem;
+    }
+
+    .metric-val {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: var(--accent);
+    }
+
+    .metric-label {
+      font-size: 0.6rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .project-featured-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    /* SMALL CARDS GRID */
+    .projects-small-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }
+
+    .project-card {
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 2rem;
+      background: var(--bg2);
+      transition: all 0.3s;
+      position: relative;
+      overflow: hidden;
+      cursor: none;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .project-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: var(--accent);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.3s;
+    }
+
+    .project-card:hover {
+      border-color: #333;
+      transform: translateY(-4px);
+      box-shadow: 0 16px 40px rgba(0,0,0,0.4);
+    }
+
+    .project-card:hover::before { transform: scaleX(1); }
+
+    .project-num {
+      font-size: 0.62rem;
+      letter-spacing: 0.2em;
+      color: var(--accent);
+      margin-bottom: 1rem;
+      opacity: 0.6;
+    }
+
+    .project-title {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 0.8rem;
+      letter-spacing: -0.01em;
+    }
+
+    .project-desc {
+      font-size: 0.78rem;
+      color: var(--muted);
+      line-height: 1.9;
+      margin-bottom: 1.5rem;
+      flex: 1;
+    }
+
+    .project-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .project-link {
+      font-size: 0.7rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      transition: gap 0.2s;
+      margin-top: auto;
+    }
+
+    .project-link:hover { gap: 0.8rem; }
+
+    /* SECTION DIVIDER */
+    .section-divider {
+      padding: 1rem 3rem 0;
+      font-size: 0.62rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--muted);
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .section-divider::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+
+    /* HIDDEN for filter */
+    .project-card[data-hidden="true"],
+    .project-featured[data-hidden="true"] {
+      display: none;
+    }
+
+    /* FOOTER */
+    .projects-footer {
+      padding: 3rem;
+      border-top: 1px solid var(--border);
+      text-align: center;
+    }
+
+    .projects-footer p {
+      font-size: 0.75rem;
+      color: var(--muted);
+      margin-bottom: 1.5rem;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .page-header { padding: 7rem 1.5rem 3rem; }
+      .filter-bar { padding: 1.5rem; }
+      .projects-list { padding: 1.5rem; }
+      .project-featured { grid-template-columns: 1fr; }
+      .project-featured-visual { min-height: 180px; border-right: none; border-bottom: 1px solid var(--border); }
+      .project-featured-content { padding: 2rem; }
+      .section-divider { padding: 1rem 1.5rem 0; }
+      .projects-footer { padding: 2rem 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-logo">SM_</div>
+    <ul class="nav-links">
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="projects.html" style="color: var(--accent);">Projects</a></li>
+      <li><a href="index.html#skills">Skills</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- PAGE HEADER -->
+  <div class="page-header">
+    <div class="page-header-grid"></div>
+    <div class="page-header-blob"></div>
+    <a href="index.html" class="back-link">← Back to Home</a>
+    <h1 class="page-title">My <span>Projects</span></h1>
+    <p class="page-sub">4 projects · AI/ML, Web, Computer Vision — built with real impact in mind.</p>
+  </div>
+
+  <!-- FILTER BAR -->
+  <div class="filter-bar">
+    <span class="filter-label">Filter:</span>
+    <button class="filter-btn active" data-filter="all">All</button>
+    <button class="filter-btn" data-filter="ai">AI / ML</button>
+    <button class="filter-btn" data-filter="web">Web</button>
+    <button class="filter-btn" data-filter="cv">Computer Vision</button>
+    <button class="filter-btn" data-filter="hackathon">Hackathon</button>
+  </div>
+
+  <!-- PROJECTS -->
+  <div class="projects-list">
+
+    <!-- FEATURED: ReVoice -->
+    <div class="project-featured reveal" data-categories="ai">
+      <div class="project-featured-visual">
+        <div class="project-visual-lines"></div>
+        <div class="project-visual-icon">🎙️</div>
+      </div>
+      <div class="project-featured-content">
+        <div class="project-featured-top">
+          <p class="project-year">2026 · Featured</p>
+          <h2 class="project-featured-title">ReVoice</h2>
+          <p class="project-featured-desc">End-to-end voice conversion system using Whisper for speech recognition and Tacotron2/HiFi-GAN as the vocoder. Tested across 5 voice profiles with informal listening evaluations. Optimized the audio preprocessing pipeline with Librosa to significantly cut down inference time.</p>
+          <div class="project-metrics">
+            <div class="metric">
+              <span class="metric-val">3.8/5</span>
+              <span class="metric-label">MOS Score</span>
+            </div>
+            <div class="metric">
+              <span class="metric-val">~40%</span>
+              <span class="metric-label">Faster Inference</span>
+            </div>
+            <div class="metric">
+              <span class="metric-val">5</span>
+              <span class="metric-label">Voice Profiles</span>
+            </div>
+          </div>
+          <div class="project-tags">
+            <span class="tag">Python</span>
+            <span class="tag">PyTorch</span>
+            <span class="tag">Transformers</span>
+            <span class="tag">Whisper</span>
+            <span class="tag">Tacotron2</span>
+            <span class="tag">Librosa</span>
+          </div>
+        </div>
+        <div class="project-featured-footer">
+          <a href="https://github.com/shrithisside" target="_blank" rel="noopener noreferrer" class="project-link">View on GitHub →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- FEATURED: Voice2Gesture -->
+    <div class="project-featured reveal" data-categories="ai web" style="flex-direction: row-reverse;">
+      <div class="project-featured-visual" style="border-right: none; border-left: 1px solid var(--border);">
+        <div class="project-visual-lines"></div>
+        <div class="project-visual-icon">🤟</div>
+      </div>
+      <div class="project-featured-content">
+        <div class="project-featured-top">
+          <p class="project-year">2026</p>
+          <h2 class="project-featured-title">Voice2Gesture</h2>
+          <p class="project-featured-desc">A web application that converts spoken language in videos into sign language animations — improving accessibility for the deaf and hard-of-hearing community. Engineered a full end-to-end pipeline: audio extraction → speech-to-text → sign generation → video overlay.</p>
+          <div class="project-metrics">
+            <div class="metric">
+              <span class="metric-val">85%</span>
+              <span class="metric-label">Transcription Accuracy</span>
+            </div>
+            <div class="metric">
+              <span class="metric-val">3+</span>
+              <span class="metric-label">Video Formats</span>
+            </div>
+          </div>
+          <div class="project-tags">
+            <span class="tag">Python</span>
+            <span class="tag">Django</span>
+            <span class="tag">TensorFlow</span>
+            <span class="tag">Keras</span>
+            <span class="tag">NLTK</span>
+            <span class="tag">pydub</span>
+          </div>
+        </div>
+        <div class="project-featured-footer">
+          <a href="https://github.com/shrithisside" target="_blank" rel="noopener noreferrer" class="project-link">View on GitHub →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- SMALL GRID -->
+    <div class="section-divider">More Projects</div>
+    <div class="projects-small-grid">
+
+      <div class="project-card reveal" data-categories="cv ai">
+        <p class="project-num">003</p>
+        <h3 class="project-title">Face Mapping</h3>
+        <p class="project-desc">Real-time face landmark detection using the MediaPipe Tasks API and OpenCV in Python. Detects 468 facial landmark points from live webcam video with 30ms latency at 30 FPS. Achieved 95%+ accuracy across varied lighting conditions using the face landmarker.task model in VIDEO mode.</p>
+        <div class="project-metrics" style="margin-bottom:1rem;">
+          <div class="metric">
+            <span class="metric-val">468</span>
+            <span class="metric-label">Landmarks</span>
+          </div>
+          <div class="metric">
+            <span class="metric-val">95%+</span>
+            <span class="metric-label">Accuracy</span>
+          </div>
+          <div class="metric">
+            <span class="metric-val">30ms</span>
+            <span class="metric-label">Latency</span>
+          </div>
+        </div>
+        <div class="project-tags">
+          <span class="tag">Python</span>
+          <span class="tag">OpenCV</span>
+          <span class="tag">MediaPipe</span>
+          <span class="tag">NumPy</span>
+        </div>
+        <a href="https://github.com/shrithisside" target="_blank" rel="noopener noreferrer" class="project-link">View on GitHub →</a>
+      </div>
+
+      <div class="project-card reveal" data-categories="web hackathon">
+        <p class="project-num">004</p>
+        <h3 class="project-title">Campus OS</h3>
+        <p class="project-desc">Unified ERP system for public colleges built at SIH Hackathon, eliminating fragmented data entry across departments. Delivered a fully functional prototype covering Admissions, Academics, and Real-Time Analytics — projecting 60%+ reduction in administrative overhead.</p>
+        <div class="project-metrics" style="margin-bottom:1rem;">
+          <div class="metric">
+            <span class="metric-val">60%+</span>
+            <span class="metric-label">Less Overhead</span>
+          </div>
+          <div class="metric">
+            <span class="metric-val">SIH</span>
+            <span class="metric-label">Hackathon</span>
+          </div>
+        </div>
+        <div class="project-tags">
+          <span class="tag">HTML</span>
+          <span class="tag">CSS</span>
+          <span class="tag">JavaScript</span>
+          <span class="tag">TestNG</span>
+        </div>
+        <a href="https://github.com/shrithisside" target="_blank" rel="noopener noreferrer" class="project-link">View on GitHub →</a>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="projects-footer">
+    <p>More projects coming soon — check my GitHub for the latest.</p>
+    <a href="https://github.com/shrithisside" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">View GitHub Profile →</a>
+  </div>
+
+  <footer>
+    <span>Shriwayanta Maiti</span>
+    <p>Designed & built with <span>♥</span> — 2026</p>
+    <p>shrithisside.dev</p>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    // Filter logic
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const allCards = document.querySelectorAll('[data-categories]');
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        const filter = btn.dataset.filter;
+
+        allCards.forEach(card => {
+          if (filter === 'all') {
+            card.removeAttribute('data-hidden');
+          } else {
+            const cats = card.dataset.categories || '';
+            if (cats.includes(filter)) {
+              card.removeAttribute('data-hidden');
+            } else {
+              card.setAttribute('data-hidden', 'true');
+            }
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>
