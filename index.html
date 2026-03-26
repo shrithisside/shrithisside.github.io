@@ -121,6 +121,14 @@
 
   <!-- Stylesheet -->
   <link rel="stylesheet" href="style.css" />
+
+  <!-- Theme Script (to avoid FOUC) -->
+  <script>
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) {
+      document.documentElement.setAttribute('data-theme', savedTheme);
+    }
+  </script>
 </head>
 <body>
 
@@ -135,6 +143,12 @@
       <li><a href="#projects">Projects</a></li>
       <li><a href="#skills">Skills</a></li>
       <li><a href="#contact">Contact</a></li>
+      <li style="display: flex; align-items: center;">
+        <button id="themeToggle" class="theme-toggle" aria-label="Toggle Theme">
+          <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+          <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+        </button>
+      </li>
     </ul>
   </nav>
 
@@ -302,8 +316,9 @@
   <!-- CONTACT -->
   <section id="contact">
     <p class="section-label reveal">04 — Contact</p>
-    <div class="contact-inner">
-      <h2 class="contact-heading reveal">Let's build<br /><span>something.</span></h2>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <h2 class="contact-heading reveal">Let's build<br /><span>something.</span></h2>
       <p class="contact-sub reveal">I'm currently open to internships, collaborations, and interesting projects. Drop me a message — I reply fast.</p>
       <div class="contact-links reveal">
         <a href="mailto:shrithissidee@gmail.com" class="contact-link">
@@ -339,6 +354,35 @@
           <span>↗</span>
         </a>
       </div>
+      </div>
+      
+      <!-- Contact Form -->
+      <form class="contact-form reveal" action="https://api.web3forms.com/submit" method="POST">
+        <!-- 
+          IMPORTANT: Replace the value below with your actual Access Key from https://web3forms.com/ 
+          This connects the form to your Email!
+        -->
+        <input type="hidden" name="access_key" value="6bdb10e0-ca3a-4355-a2a0-f5a1bbd31b4c">
+        <form action="https://api.web3forms.com/submit" method="POST">
+  
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required placeholder="John Doe">
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required placeholder="john@example.com">
+        </div>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" required placeholder="Hello Shriwayanta, I'd like to work with you..."></textarea>
+        </div>
+        
+        <!-- Honeypot for Spam Protection -->
+        <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+        
+        <button type="submit" class="btn btn-primary contact-submit">Send Message →</button>
+      </form>
     </div>
   </section>
 

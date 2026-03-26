@@ -67,3 +67,16 @@ const skillObserver = new IntersectionObserver(entries => {
 }, { threshold: 0.3 });
 
 document.querySelectorAll('.skill-group').forEach(g => skillObserver.observe(g));
+
+// ── Theme Toggle ───────────────────────────────────────────────
+const themeToggleBtn = document.getElementById('themeToggle');
+
+if (themeToggleBtn) {
+  themeToggleBtn.addEventListener('click', () => {
+    const currentTheme = document.documentElement.getAttribute('data-theme') || 'dark';
+    const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+    
+    document.documentElement.setAttribute('data-theme', newTheme);
+    localStorage.setItem('theme', newTheme);
+  });
+}
