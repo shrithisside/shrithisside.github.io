@@ -265,77 +265,7 @@
       gap: 1rem;
     }
 
-    /* SMALL CARDS GRID */
-    .projects-small-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
-      gap: 1.5rem;
-      margin-top: 1.5rem;
-    }
-
-    .project-card {
-      border: 1px solid var(--border);
-      border-radius: 4px;
-      padding: 2rem;
-      background: var(--bg2);
-      transition: all 0.3s;
-      position: relative;
-      overflow: hidden;
-      cursor: none;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .project-card::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0;
-      height: 2px;
-      background: var(--accent);
-      transform: scaleX(0);
-      transform-origin: left;
-      transition: transform 0.3s;
-    }
-
-    .project-card:hover {
-      border-color: #333;
-      transform: translateY(-4px);
-      box-shadow: 0 16px 40px rgba(0,0,0,0.4);
-    }
-
-    .project-card:hover::before { transform: scaleX(1); }
-
-    .project-num {
-      font-size: 0.62rem;
-      letter-spacing: 0.2em;
-      color: var(--accent);
-      margin-bottom: 1rem;
-      opacity: 0.6;
-    }
-
-    .project-title {
-      font-family: 'Syne', sans-serif;
-      font-size: 1.25rem;
-      font-weight: 700;
-      margin-bottom: 0.8rem;
-      letter-spacing: -0.01em;
-    }
-
-    .project-desc {
-      font-size: 0.78rem;
-      color: var(--muted);
-      line-height: 1.9;
-      margin-bottom: 1.5rem;
-      flex: 1;
-    }
-
-    .project-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-      margin-bottom: 1.5rem;
-    }
-
+    /* .project-link is used inside featured cards */
     .project-link {
       font-size: 0.7rem;
       letter-spacing: 0.12em;
@@ -346,32 +276,11 @@
       align-items: center;
       gap: 0.4rem;
       transition: gap 0.2s;
-      margin-top: auto;
     }
 
     .project-link:hover { gap: 0.8rem; }
 
-    /* SECTION DIVIDER */
-    .section-divider {
-      padding: 1rem 3rem 0;
-      font-size: 0.62rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--muted);
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-    }
-
-    .section-divider::after {
-      content: '';
-      flex: 1;
-      height: 1px;
-      background: var(--border);
-    }
-
     /* HIDDEN for filter */
-    .project-card[data-hidden="true"],
     .project-featured[data-hidden="true"] {
       display: none;
     }
@@ -454,7 +363,7 @@
       </div>
       <div class="project-featured-content">
         <div class="project-featured-top">
-          <p class="project-year">2026 · Featured</p>
+          <p class="project-year">2026</p>
           <h2 class="project-featured-title">ReVoice</h2>
           <p class="project-featured-desc">End-to-end voice conversion system using Whisper for speech recognition and Tacotron2/HiFi-GAN as the vocoder. Tested across 5 voice profiles with informal listening evaluations. Optimized the audio preprocessing pipeline with Librosa to significantly cut down inference time.</p>
           <div class="project-metrics">
@@ -522,61 +431,78 @@
       </div>
     </div>
 
-    <!-- SMALL GRID -->
-    <div class="section-divider">More Projects</div>
-    <div class="projects-small-grid">
-
-      <div class="project-card reveal" data-categories="cv ai">
-        <p class="project-num">003</p>
-        <h3 class="project-title">Face Mapping</h3>
-        <p class="project-desc">Real-time face landmark detection using the MediaPipe Tasks API and OpenCV in Python. Detects 468 facial landmark points from live webcam video with 30ms latency at 30 FPS. Achieved 95%+ accuracy across varied lighting conditions using the face landmarker.task model in VIDEO mode.</p>
-        <div class="project-metrics" style="margin-bottom:1rem;">
-          <div class="metric">
-            <span class="metric-val">468</span>
-            <span class="metric-label">Landmarks</span>
-          </div>
-          <div class="metric">
-            <span class="metric-val">95%+</span>
-            <span class="metric-label">Accuracy</span>
-          </div>
-          <div class="metric">
-            <span class="metric-val">30ms</span>
-            <span class="metric-label">Latency</span>
-          </div>
-        </div>
-        <div class="project-tags">
-          <span class="tag">Python</span>
-          <span class="tag">OpenCV</span>
-          <span class="tag">MediaPipe</span>
-          <span class="tag">NumPy</span>
-        </div>
-        <a href="https://github.com/shrithisside/face-mapping" target="_blank" rel="noopener noreferrer" class="project-link">View on GitHub →</a>
+    <!-- FEATURED: Face Mapping -->
+    <div class="project-featured reveal" data-categories="cv ai">
+      <div class="project-featured-visual">
+        <div class="project-visual-lines"></div>
+        <div class="project-visual-icon">🗺️</div>
       </div>
-
-      <div class="project-card reveal" data-categories="web hackathon">
-        <p class="project-num">004</p>
-        <h3 class="project-title">Campus OS</h3>
-        <p class="project-desc">Unified ERP system for public colleges built at SIH Hackathon, eliminating fragmented data entry across departments. Delivered a fully functional prototype covering Admissions, Academics, and Real-Time Analytics — projecting 60%+ reduction in administrative overhead.</p>
-        <div class="project-metrics" style="margin-bottom:1rem;">
-          <div class="metric">
-            <span class="metric-val">60%+</span>
-            <span class="metric-label">Less Overhead</span>
+      <div class="project-featured-content">
+        <div class="project-featured-top">
+          <p class="project-year">2025</p>
+          <h2 class="project-featured-title">Face Mapping</h2>
+          <p class="project-featured-desc">Real-time face landmark detection using the MediaPipe Tasks API and OpenCV in Python. Detects 468 facial landmark points from live webcam video with 30ms latency at 30 FPS. Achieved 95%+ accuracy across varied lighting conditions using the face landmarker.task model in VIDEO mode.</p>
+          <div class="project-metrics">
+            <div class="metric">
+              <span class="metric-val">468</span>
+              <span class="metric-label">Landmarks</span>
+            </div>
+            <div class="metric">
+              <span class="metric-val">95%+</span>
+              <span class="metric-label">Accuracy</span>
+            </div>
+            <div class="metric">
+              <span class="metric-val">30ms</span>
+              <span class="metric-label">Latency</span>
+            </div>
           </div>
-          <div class="metric">
-            <span class="metric-val">SIH</span>
-            <span class="metric-label">Hackathon</span>
+          <div class="project-tags">
+            <span class="tag">Python</span>
+            <span class="tag">OpenCV</span>
+            <span class="tag">MediaPipe</span>
+            <span class="tag">NumPy</span>
           </div>
         </div>
-        <div class="project-tags">
-          <span class="tag">HTML</span>
-          <span class="tag">CSS</span>
-          <span class="tag">JavaScript</span>
-          <span class="tag">TestNG</span>
+        <div class="project-featured-footer">
+          <a href="https://github.com/shrithisside/face-mapping" target="_blank" rel="noopener noreferrer" class="project-link">View on GitHub →</a>
         </div>
-        <a href="https://github.com/shrithisside/ERP" target="_blank" rel="noopener noreferrer" class="project-link">View on GitHub →</a>
       </div>
-
     </div>
+
+    <!-- FEATURED: Campus OS -->
+    <div class="project-featured reveal" data-categories="web hackathon" style="flex-direction: row-reverse;">
+      <div class="project-featured-visual" style="border-right: none; border-left: 1px solid var(--border);">
+        <div class="project-visual-lines"></div>
+        <div class="project-visual-icon">🏛️</div>
+      </div>
+      <div class="project-featured-content">
+        <div class="project-featured-top">
+          <p class="project-year">2024 · Hackathon</p>
+          <h2 class="project-featured-title">Campus OS</h2>
+          <p class="project-featured-desc">Unified ERP system for public colleges built at SIH Hackathon, eliminating fragmented data entry across departments. Delivered a fully functional prototype covering Admissions, Academics, and Real-Time Analytics — projecting 60%+ reduction in administrative overhead.</p>
+          <div class="project-metrics">
+            <div class="metric">
+              <span class="metric-val">60%+</span>
+              <span class="metric-label">Less Overhead</span>
+            </div>
+            <div class="metric">
+              <span class="metric-val">SIH</span>
+              <span class="metric-label">Hackathon</span>
+            </div>
+          </div>
+          <div class="project-tags">
+            <span class="tag">HTML</span>
+            <span class="tag">CSS</span>
+            <span class="tag">JavaScript</span>
+            <span class="tag">TestNG</span>
+          </div>
+        </div>
+        <div class="project-featured-footer">
+          <a href="https://github.com/shrithisside/ERP" target="_blank" rel="noopener noreferrer" class="project-link">View on GitHub →</a>
+        </div>
+      </div>
+    </div>
+
   </div>
 
   <!-- FOOTER -->
